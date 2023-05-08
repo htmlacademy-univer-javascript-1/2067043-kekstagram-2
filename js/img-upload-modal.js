@@ -21,8 +21,6 @@ function openForm () {
 
   closeFormElement.addEventListener('click', closeForm);
   document.addEventListener('keydown', onFormEscKeydown);
-
-
 }
 
 function closeForm () {
@@ -32,7 +30,6 @@ function closeForm () {
   uploadInput.value = '';
   hashtagInput.value = '';
   descriptionInput.value = '';
-  // document.querySelector('.pristine-error').classList.add('hidden');
 
   closeFormElement.removeEventListener('click', closeForm);
   document.removeEventListener('keydown', onFormEscKeydown);
