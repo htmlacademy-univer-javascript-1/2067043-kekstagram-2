@@ -30,7 +30,7 @@
       <section class="img-upload">
         <div class="img-upload__wrapper">
           <h2 class="img-upload__title  visually-hidden">Загрузка фотографии</h2>
-          <form class="img-upload__form" id="upload-select-image" method="post" enctype="multipart/form-data" autocomplete="off">
+          <form class="img-upload__form" id="upload-select-image" method="post" action="https://github.com/ducklyduck/2067043-kekstagram-2" enctype="multipart/form-data" autocomplete="off">
 
             <!-- Изначальное состояние поля для загрузки изображения -->
             <fieldset class="img-upload__start">
@@ -39,7 +39,7 @@
             </fieldset>
 
             <!-- Форма редактирования изображения -->
-            <div class="img-upload__overlay  hidden">
+            <div class="img-upload__overlay hidden">
               <div class="img-upload__wrapper">
                 <div class="img-upload__preview-container">
 
@@ -115,6 +115,11 @@
 
                 <!-- Добавление хэш-тегов и комментария к изображению -->
                 <fieldset class="img-upload__text text">
+                  <!-- <div class="img-upload__field-wrapper">
+                    <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег"
+                    onfocus="document.removeEventListener('keydown', onFormEscKeydown)"
+                    onblur="document.addEventListener('keydown', onFormEscKeydown)">
+                  </div> -->
                   <div class="img-upload__field-wrapper">
                     <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег">
                   </div>
@@ -232,6 +237,7 @@
     <div class="img-upload__message  img-upload__message--loading">Загружаем...</div>
   </template>
 
+  <script src="pristine/pristine.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

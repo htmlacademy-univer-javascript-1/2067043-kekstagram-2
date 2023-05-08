@@ -697,6 +697,15 @@ main {
   border-radius: 5px;
 }
 
+/**
+ * Стиль для ошибки в форме
+ */
+
+.form__error {
+  display: block;
+  font-size: 0.85em;
+  color: rgb(227, 201, 201);
+}
 
 /**
  * Кнопка для отправки изображения

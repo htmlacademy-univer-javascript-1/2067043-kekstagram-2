@@ -22,7 +22,7 @@ const names = [
 const createPhoto = () => {
   return {
     id: getRandomInteger(1, 25),
-    url: '',
+    url: `../photos/${getRandomInteger(1, 25)}.jpg`,
     description: 'NICE',
     likes: getRandomInteger(1, 25),
     comments: [
