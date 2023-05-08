@@ -40,6 +40,7 @@ pristine.addValidator(
 );
 
 function validateHashtagRight (value) {
+  value = value.toLowerCase();
   const splitted = value.split(/\s+/);
   let isHashtagRight = true;
   splitted.forEach((element) => {
