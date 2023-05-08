@@ -12,4 +12,25 @@ const getRandomElement = (elements) => {
 
 const checkStringLength = (str, maxLength) => str.length <= maxLength;
 
-export {getRandomInteger, getRandomElement, checkStringLength};
+const isEscapeKey = (evt) => {
+  return evt.key === 'Escape';
+};
+
+const isEnterKey = (evt) => {
+  return evt.key === 'Enter';
+};
+
+function checkDuplicate(arr){
+  let result = false;
+  for(let i = 0; i < arr.length;i++) {
+    if(arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])){
+      result = true;
+      break;
+    }
+  }
+  return result;
+}
+
+export {getRandomInteger, getRandomElement, checkStringLength,
+  isEscapeKey, isEnterKey,
+  checkDuplicate};
