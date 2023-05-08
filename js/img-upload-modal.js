@@ -1,15 +1,14 @@
 import {isEscapeKey} from './util.js';
 import {onScaleDecreaseClick, onScaleIncreaseClick, resetPhotoScale} from './photo-scale.js';
+import {resetFilters} from './photo-filters.js';
 
 const form = document.querySelector('#upload-select-image');
 const uploadInput = form.querySelector('#upload-file');
 const formElement = form.querySelector('.img-upload__overlay');
 const closeFormElement = form.querySelector('#upload-cancel');
-
-const scaleDecreaseButton = document.querySelector('.scale__control--smaller');
-const scaleIncreaseButton = document.querySelector('.scale__control--bigger');
-
-const hashtagInput = document.querySelector('.text__hashtags');
+const scaleDecreaseButton = form.querySelector('.scale__control--smaller');
+const scaleIncreaseButton = form.querySelector('.scale__control--bigger');
+const hashtagInput = form.querySelector('.text__hashtags');
 const descriptionInput = form.querySelector('.text__description');
 
 const onUploadEscKeydown = (evt) => {
@@ -38,12 +37,14 @@ function closeUploadPopup () {
   hashtagInput.value = '';
   descriptionInput.value = '';
 
-  resetPhotoScale();
+  closeFormElement.removeEventListener('click', closeUploadPopup);
+  document.removeEventListener('keydown', onUploadEscKeydown);
+
   scaleDecreaseButton.removeEventListener('click', onScaleDecreaseClick);
   scaleIncreaseButton.removeEventListener('click', onScaleIncreaseClick);
 
-  closeFormElement.removeEventListener('click', closeUploadPopup);
-  document.removeEventListener('keydown', onUploadEscKeydown);
+  resetPhotoScale();
+  resetFilters();
 }
 
 uploadInput.addEventListener('change', () => {
