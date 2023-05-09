@@ -18,7 +18,7 @@ const onUploadEscKeydown = (evt) => {
   }
 };
 
-function openForm () {
+function openUploadPopup () {
   formElement.classList.remove('hidden');
   document.querySelector('body').classList.add('modal_open');
 
@@ -48,7 +48,7 @@ function closeUploadPopup () {
 }
 
 uploadInput.addEventListener('change', () => {
-  openForm();
+  openUploadPopup();
 });
 
 hashtagInput.addEventListener('focus',
